@@ -550,7 +550,7 @@ namespace va {
 
     va::display_t display { va::getDisplayDRM(fd) };
     if (!display) {
-      auto render_device = config::video.adapter_name.empty() ? "/dev/dri/renderD128" : config::video.adapter_name.c_str();
+      auto render_device = config::video.adapter_name.empty() ? "/dev/dri/renderD129" : config::video.adapter_name.c_str();
 
       BOOST_LOG(error) << "Couldn't open a va display from DRM with device: "sv << render_device;
       return -1;
@@ -676,7 +676,7 @@ namespace va {
 
   std::shared_ptr<platf::hwdevice_t>
   make_hwdevice(int width, int height, int offset_x, int offset_y, bool vram) {
-    auto render_device = config::video.adapter_name.empty() ? "/dev/dri/renderD128" : config::video.adapter_name.c_str();
+    auto render_device = config::video.adapter_name.empty() ? "/dev/dri/renderD129" : config::video.adapter_name.c_str();
 
     file_t file = open(render_device, O_RDWR);
     if (file.el < 0) {
