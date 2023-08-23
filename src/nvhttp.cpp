@@ -990,7 +990,6 @@ namespace nvhttp {
     https_server.default_resource["GET"] = not_found<SimpleWeb::HTTPS>;
     https_server.resource["^/serverinfo$"]["GET"] = serverinfo<SimpleWeb::HTTPS>;
     https_server.resource["^/pair$"]["GET"] = [&add_cert](auto resp, auto req) { pair<SimpleWeb::HTTPS>(add_cert, resp, req); };
-    https_server.resource["^/applist$"]["GET"] = applist;
     https_server.resource["^/appasset$"]["GET"] = appasset;
     https_server.resource["^/launch$"]["GET"] = [&host_audio](auto resp, auto req) { launch(host_audio, resp, req); };
     https_server.resource["^/pin/([0-9]+)$"]["GET"] = pin<SimpleWeb::HTTPS>;
