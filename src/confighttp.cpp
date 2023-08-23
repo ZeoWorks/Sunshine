@@ -735,8 +735,6 @@ namespace confighttp {
     https_server_t server { config::nvhttp.cert, config::nvhttp.pkey };
     server.default_resource["GET"] = not_found;
     server.resource["^/$"]["GET"] = getIndexPage;
-    server.resource["^/pin$"]["GET"] = getPinPage;
-    server.resource["^/apps$"]["GET"] = getAppsPage;
     server.resource["^/clients$"]["GET"] = getClientsPage;
     server.resource["^/config$"]["GET"] = getConfigPage;
     server.resource["^/password$"]["GET"] = getPasswordPage;
